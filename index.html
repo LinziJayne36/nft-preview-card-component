@@ -1,33 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | NFT preview card component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <title>Frontend Mentor | NFT preview card component</title>
 
-  Equilibrium #3429
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
 
-  Our Equilibrium collection promotes balance and calm.
+            :root {
+                font-family: "Outfit", sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                --softBlue: hsl(215, 51%, 70%);
+                --cyan: hsl(178, 100%, 50%);
+                --vDarkBlueMain: hsl(217, 54%, 11%);
+                --vDarkBlueCard: hsl(216, 50%, 16%);
+                --vDarkBlueLine: hsl(215, 32%, 27%);
+            }
 
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            .card-container {
+                background-color: var(--vDarkBlueMain);
+                width: 405px;
+                height: 750px;
+                margin: 10px auto;
+                padding-top: 20px;
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                margin: 60px auto;
+                height: 620px;
+                width: 375px;
+                border-radius: 12px;
+                border-radius: 14px;
+                background-color: var(--vDarkBlueCard);
+                box-shadow: rgba(12, 12, 12, 1) -4px 9px 25px -6px;
+            }
+
+            .content-section {
+                margin-left: 22px;
+            }
+
+            .identity-section {
+                margin-left: 20px;
+            }
+
+            .main-img {
+                border-radius: 8px;
+                margin: 24px auto;
+            }
+
+            .main-title {
+                color: hsl(0, 0%, 100%);
+                font-size: 24px;
+                font-weight: 600;
+                margin-top: -8px;
+            }
+
+            .body-text {
+                color: var(--softBlue);
+                width: 300px;
+            }
+
+            .price-time-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: -16px;
+            }
+
+            .price {
+                color: var(--cyan);
+                margin-left: -120px;
+                font-weight: 400;
+            }
+
+            .time-container {
+                padding-right: 25px;
+                display: flex;
+                align-items: center;
+            }
+
+            .time-limit {
+                color: var(--softBlue);
+                margin-left: 8px;
+            }
+
+            hr {
+                width: 89%;
+                margin-top: -10px;
+                border-bottom: none;
+                border-left: none;
+                border-right: none;
+                border-top-width: 1px;
+                border-top-color: rgba(139, 172, 218, 0.6);
+            }
+
+            .identity-section {
+                display: flex;
+                align-items: center;
+                margin-top: 12px;
+            }
+
+            .identity-avatar {
+                border-style: solid;
+                border-color: hsl(0, 0%, 100%);
+                border-radius: 50%;
+                border-width: 1px;
+                margin-right: 15px;
+            }
+
+            .identity-intro {
+                color: var(--softBlue);
+            }
+
+            .identity-name {
+                color: hsl(0, 0%, 100%);
+                margin-left: 4px;
+            }
+
+            .attribution {
+                font-size: 20px;
+                text-align: center;
+                font-family: "Lobster Two", cursive;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+
+            @media screen and (min-width: 1440px) {
+                .card-container {
+                    width: 1440px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card-container">
+            <div class="card">
+                <div class="content-section">
+                    <img
+                        class="main-img"
+                        src="./images/image-equilibrium.jpg"
+                        height="330px"
+                        width="330px"
+                    />
+                    <h1 class="main-title">Equilibrium #3429</h1>
+                    <p class="body-text">
+                        Our Equilibrium collection promotes balance and calm.
+                    </p>
+                    <br />
+                    <div class="price-time-container">
+                        <img
+                            class="eth-icon"
+                            src="./images/icon-ethereum.svg"
+                        />
+
+                        <span class="price">0.041 ETH</span>
+                        <div class="time-container">
+                            <img
+                                class="time-icon"
+                                src="./images/icon-clock.svg"
+                            />
+                            <span class="time-limit">3 days left</span>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <hr />
+                <div class="identity-section">
+                    <img
+                        class="identity-avatar"
+                        src="./images/image-avatar.png"
+                        height="40px"
+                        width="40px"
+                    />
+                    <span class="identity-intro">Creation of </span>
+                    <span class="identity-name">Jules Wyvern</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Linzi Jayne</a>.
+        </div>
+    </body>
 </html>
