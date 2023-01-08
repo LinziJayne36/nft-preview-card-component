@@ -54,6 +54,7 @@
                 border-radius: 14px;
                 background-color: var(--vDarkBlueCard);
                 box-shadow: rgba(12, 12, 12, 1) -4px 9px 25px -6px;
+                position: relative;
             }
 
             .content-section {
@@ -64,16 +65,50 @@
                 margin-left: 20px;
             }
 
+            .img-container {
+                height: 330px;
+                width: 330px;
+                margin-top: 24px;
+            }
+
             .main-img {
                 border-radius: 8px;
-                margin: 24px auto;
+                margin: 0 auto;
+                object-fit: cover;
+                margin-bottom: 24px;
+            }
+
+            .main-img:hover {
+                opacity: 0.4;
+            }
+
+            .icon-view {
+                visibility: hidden;
+                position: absolute;
+                top: 24%;
+                left: 44%;
+            }
+
+            .img-container:hover {
+                background-color: var(--cyan);
+                overflow: hidden;
+                border-radius: 8px;
+                /*background-image: url("./images/icon-view.svg");
+                background-repeat: no-repeat;
+                background-position: center;*/
+                cursor: pointer;
             }
 
             .main-title {
                 color: hsl(0, 0%, 100%);
                 font-size: 24px;
                 font-weight: 600;
-                margin-top: -8px;
+                margin-top: 24px;
+            }
+
+            .main-title:hover {
+                color: var(--cyan);
+                cursor: pointer;
             }
 
             .body-text {
@@ -137,6 +172,11 @@
                 margin-left: 4px;
             }
 
+            .identity-name:hover {
+                color: var(--cyan);
+                cursor: pointer;
+            }
+
             .attribution {
                 font-size: 20px;
                 text-align: center;
@@ -157,12 +197,19 @@
         <div class="card-container">
             <div class="card">
                 <div class="content-section">
-                    <img
-                        class="main-img"
-                        src="./images/image-equilibrium.jpg"
-                        height="330px"
-                        width="330px"
-                    />
+                    <div class="img-container" id="imgContainer">
+                        <img
+                            class="main-img"
+                            src="./images/image-equilibrium.jpg"
+                            height="330px"
+                            width="330px"
+                        />
+                        <img
+                            class="icon-view"
+                            id="iconView"
+                            src="./images/icon-view.svg"
+                        />
+                    </div>
                     <h1 class="main-title">Equilibrium #3429</h1>
                     <p class="body-text">
                         Our Equilibrium collection promotes balance and calm.
@@ -208,5 +255,18 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Linzi Jayne</a>.
         </div>
+        <script>
+            let imgContainer = document.getElementById("imgContainer");
+            let iconView = document.getElementById("iconView");
+            imgContainer.addEventListener("mouseover", (e) => {
+                console.log("mouse hovered over imgContainer");
+                iconView.style.visibility = "visible";
+            });
+
+            imgContainer.addEventListener("mouseout", (ev) => {
+                iconView.style.visibility = "hidden";
+                console.log("mouse just left imgContainer");
+            });
+        </script>
     </body>
 </html>
